@@ -59,5 +59,12 @@ For more examples and ideas, visit:
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 ```
 
+-Liste des conteneurs actifs et stoppé
+```
+$ docker ps -a
+CONTAINER ID   IMAGE         COMMAND    CREATED          STATUS                      PORTS     NAMES
+533b30ec1228   hello-world   "/hello"   36 minutes ago   Exited (0) 36 minutes ago
+```
+
 
 
