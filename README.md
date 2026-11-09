@@ -53,6 +53,11 @@ For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 ```
 
+-Liste des conteneurs en cours d'exécution
+```
+ $ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+```
 
 
 
