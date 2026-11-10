@@ -66,5 +66,17 @@ CONTAINER ID   IMAGE         COMMAND    CREATED          STATUS                 
 533b30ec1228   hello-world   "/hello"   36 minutes ago   Exited (0) 36 minutes ago
 ```
 
+- Commande pour supprimer un conteneur 
+```
+docker rm <ID_conteneur>
+```
 
+-Exemple en récupérant un ID :
+```
+$ docker ps -a
+CONTAINER ID   IMAGE         COMMAND    CREATED        STATUS                    PORTS     NAMES
+533b30ec1228   hello-world   "/hello"   32 hours ago   Exited (0) 32 hours ago             wonderful_tesla
+@Selim-Hamza ➜ /workspaces/tp-docker1 (feature/exo3-manipulation-base) $ docker rm 533b30ec1228
+533b30ec1228
+```
 
