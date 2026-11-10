@@ -7,6 +7,6 @@ services:
       - mongo
   
   mongo:
-    image: latest
+    image: mongo:4.4
     ports:
       - "27017:27017"
