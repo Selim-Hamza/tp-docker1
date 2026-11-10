@@ -96,3 +96,12 @@ Untagged: hello-world:latest
 Deleted: sha256:c567b231f65614688711a75f31518a064258a51d442117a3e771a3a8fdba78ef
 ```
 
+### Création d'un serveur web avec Docker
+
+##### Téléchargement de l'image Nginx et exécution d'un conteneur en tâche de fond sur le port 8080
+```
+docker pull nginx
+
+docker run -d -p 8080:80 --name mon_nginx nginx
+```
+
