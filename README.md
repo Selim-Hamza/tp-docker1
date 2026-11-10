@@ -216,3 +216,19 @@ services:
 
 ##### 4 Nettoyer l'environnement
 `docker compose down`
+
+## Cheatsheet Docker
+
+| Commande | Description |
+| :--- | :--- |
+| `docker --version` | Affiche la version installée de Docker |
+| `docker images` | Liste les images disponibles localement |
+| `docker pull <image>` | Télécharge une image depuis Docker Hub |
+| `docker run <image>` | Lance un conteneur à partir d'une image |
+| `docker ps` | Liste les conteneurs en cours d'exécution |
+| `docker ps -a` | Liste tous les conteneurs, actifs et stoppés |
+| `docker stop <id\|nom>` | Arrête un conteneur en cours |
+| `docker rm <id\|nom>` | Supprime un conteneur |
+| `docker rmi <id\|nom>` | Supprime une image |
+| `docker exec -it <id\|nom> bash` | Ouvre un terminal interactif dans un conteneur |
+| `docker build -t <nom_image> .` | Construit une image à partir d'un Dockerfile |
