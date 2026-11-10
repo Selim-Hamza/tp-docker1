@@ -164,3 +164,52 @@ CMD ["python", "app.py"]
  - Rendu de l'application : 
  ![alt text](renduApp.png)
 
+## Exercice 6: Utilisation de docker compose
+
+##### 1 Ajout de la connexion MongoDB dans `app.py`
+```python
+from flask import Flask
+from pymongo import MongoClient
+
+app = Flask(__name__)
+
+# Le nom d'hôte 'mongo' fera référence au service défini dans docker-compose
+client = MongoClient('mongodb://mongo:27017/')
+
+@app.route('/')
+def hello_world():
+    try:
+        # Test de la connexion à la base de données
+        client.admin.command('ping')
+        status = "Connexion à MongoDB réussie !"
+    except Exception as e:
+        status = f"Échec de connexion : {e}"
+    
+    return f"Hello, World depuis Flask et Docker ! <br><br> Statut BDD : {status}"
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
+```
+
+##### 2 Modification la ligne d'installation pour inclure le pilote MongoDB dans `Dockerfile`
+`RUN pip install flask pymongo`
+
+##### 3 Création du fichier `docker-compose.yml` avec les deux conteneurs (on met une version stable de mongo pas latest)
+```yml
+version: '3.8'
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+  
+  mongo:
+    image: mongo:4.4
+    ports:
+      - "27017:27017"
+```
+
+- Rendue de l'app:
+![alt text](rendu2.png)

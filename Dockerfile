@@ -7,8 +7,8 @@ WORKDIR /app
 # 3. Copie des fichiers locaux vers le conteneur
 COPY app.py .
 
-# 4. Installation de la dépendance Flask
-RUN pip install flask
+# 4. Installation des dépendances Flask et MongoDB
+RUN pip install flask pymongo
 
 # 5. Commande d'exécution au démarrage du conteneur
 CMD ["python", "app.py"]
