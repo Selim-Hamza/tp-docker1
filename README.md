@@ -98,10 +98,17 @@ Deleted: sha256:c567b231f65614688711a75f31518a064258a51d442117a3e771a3a8fdba78ef
 
 ### Création d'un serveur web avec Docker
 
-##### Téléchargement de l'image Nginx et exécution d'un conteneur en tâche de fond sur le port 8080
+##### 1 Téléchargement de l'image Nginx et exécution d'un conteneur en tâche de fond sur le port 8080
 ```
 docker pull nginx
 
 docker run -d -p 8080:80 --name mon_nginx nginx
+```
+
+##### 2 Vérification avec `docker ps` et accès à la page web via le navigateur
+```
+$ docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                                     NAMES
+23e9efd7b763   nginx     "/docker-entrypoint.…"   15 minutes ago   Up 15 minutes   0.0.0.0:8080->80/tcp, [::]:8080->80/tcp   mon_nginx
 ```
 
