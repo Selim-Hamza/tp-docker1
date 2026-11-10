@@ -112,3 +112,10 @@ CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS       
 23e9efd7b763   nginx     "/docker-entrypoint.…"   15 minutes ago   Up 15 minutes   0.0.0.0:8080->80/tcp, [::]:8080->80/tcp   mon_nginx
 ```
 
+##### 3 Arrêt (`docker stop`) et suppression (`docker rm`) du conteneur
+```
+ $ docker stop mon_nginx
+mon_nginx
+$ docker rm mon_nginx
+mon_nginx
+```
