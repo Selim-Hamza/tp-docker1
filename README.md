@@ -119,3 +119,48 @@ mon_nginx
 $ docker rm mon_nginx
 mon_nginx
 ```
+
+## Exercice 5: Déploiement d'une application Python Flask
+
+#####  1 Création du fichier `app.py` (application Flask minimale)
+```python
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return 'Hello, World depuis Flask et Docker !'
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
+```
+
+##### 2 Écriture du `Dockerfile`
+```Dockerfile
+# 1. Image de base légère (le système d'exploitation avec Python préinstallé)
+FROM python:3.10-slim
+
+# 2. Définition du répertoire de travail dans le conteneur
+WORKDIR /app
+
+# 3. Copie des fichiers locaux vers le conteneur
+COPY app.py .
+
+# 4. Installation de la dépendance Flask
+RUN pip install flask
+
+# 5. Commande d'exécution au démarrage du conteneur
+CMD ["python", "app.py"]
+```
+
+
+#####  3 Construction de l'image avec 
+`docker build -t mon_flask .`
+
+#####  4 Exécution et test avec
+ `docker run -d -p 5000:5000 mon_flask`
+
+ - Rendu de l'application : 
+ ![alt text](renduApp.png)
+
