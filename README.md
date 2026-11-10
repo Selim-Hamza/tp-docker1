@@ -213,3 +213,6 @@ services:
 
 - Rendue de l'app:
 ![alt text](rendu2.png)
+
+##### 4 Nettoyer l'environnement
+`docker compose down`
