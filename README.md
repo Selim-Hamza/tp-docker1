@@ -79,4 +79,20 @@ CONTAINER ID   IMAGE         COMMAND    CREATED        STATUS                   
 @Selim-Hamza ➜ /workspaces/tp-docker1 (feature/exo3-manipulation-base) $ docker rm 533b30ec1228
 533b30ec1228
 ```
+- Commande permettent de supprimez une image 
+```
+docker rmi <ID_image>
+```
+
+-Exemple en récupérant id image: 
+
+```
+@Selim-Hamza ➜ /workspaces/tp-docker1 (feature/exo3-manipulation-base) $ docker images
+                                                   i Info →   U  In Use
+IMAGE                ID             DISK USAGE   CONTENT SIZE   EXTRA
+hello-world:latest   c567b231f656       25.9kB         9.49kB
+@Selim-Hamza ➜ /workspaces/tp-docker1 (feature/exo3-manipulation-base) $ docker rmi c567b231f656
+Untagged: hello-world:latest
+Deleted: sha256:c567b231f65614688711a75f31518a064258a51d442117a3e771a3a8fdba78ef
+```
 
